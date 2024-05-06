@@ -1,0 +1,9 @@
+name: Trivy SCA
+
+on:
+  push:
+    branches: [ "workflows" ]
+    
+jobs:
+    Scan:
+     uses: t-kolev/ric-plt-xapp-frame/.github/workflows/trivy.yml@master
