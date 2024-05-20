@@ -23,19 +23,5 @@ while IFS= read -r url; do
         echo "Error: Failed to add subtree for URL: $url"
     else
         echo "Subtree added successfully for URL: $url"
-
-        # Check if there are any changes to commit
-        if ! git diff-index --quiet HEAD --; then
-            # Commit the changes
-            git add .
-            git commit -m "Added subtree from $url"
-            if [ $? -ne 0 ]; then
-                echo "Error: Failed to commit changes for URL: $url"
-            else
-                echo "Changes committed successfully for URL: $url"
-            fi
-        else
-            echo "No changes to commit for URL: $url"
-        fi
     fi
 done < "$URLS_FILE"
