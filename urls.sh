@@ -18,8 +18,16 @@ while IFS= read -r url; do
     local_dir=$(basename "$url")
 
     echo "Adding subtree for URL: $url"
-    git subtree add --prefix "$local_dir" "$url" "$REMOTE_BRANCH" squash
+    git subtree add --prefix "$local_dir" "$url" "$REMOTE_BRANCH" --squash
     if [ $? -ne 0 ]; then
         echo "Error: Failed to add subtree for URL: $url"
     fi
+     # Commit the changes
+        git add .
+        git commit -m "Added subtree from $url"
+        if [ $? -ne 0 ]; then
+            echo "Error: Failed to commit changes for URL: $url"
+        else
+            echo "Changes committed successfully for URL: $url"
+        fi
 done < "$URLS_FILE"
