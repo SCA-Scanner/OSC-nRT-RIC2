@@ -1,5 +1,6 @@
 https://github.com/o-ran-sc/ric-app-ad
 https://github.com/o-ran-sc/ric-app-ad-cell
+https://github.com/o-ran-sc/ric-app-bouncer
 https://github.com/o-ran-sc/ric-app-hw
 https://github.com/o-ran-sc/ric-app-hw-go
 https://github.com/o-ran-sc/ric-app-hw-python
