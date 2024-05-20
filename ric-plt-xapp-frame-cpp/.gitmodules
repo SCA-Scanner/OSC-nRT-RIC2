@@ -1,3 +1,0 @@
-[submodule "ext/jsmn"]
-	path = ext/jsmn
-	url = https://github.com/zserge/jsmn
