@@ -1,6 +1,0 @@
-# causes CI job(s) to install RMR with the desired version
----
-version: 4.7.0
-repo: release
-
-
