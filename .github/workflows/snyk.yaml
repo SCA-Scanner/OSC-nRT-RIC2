@@ -50,19 +50,4 @@ jobs:
             name: snyk-code.sarif
             path: snyk-code.sarif
         
-      - name: filter-sarif
-        uses: advanced-security/filter-sarif@v1
-        with:
-            patterns: |
-              +**/*.j
-              -**/*Test*.java
-            input: snyk-code.sarif 
-            output: snyk-code.sarif 
-        
-        # Push the Snyk Code results into GitHub Code Scanning tab
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: snyk-code.sarif
-          category: snyk
-
+  
